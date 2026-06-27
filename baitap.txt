@@ -1,0 +1,26 @@
+
+
+b)
+Sử dụng bộ lọc định dạng để chỉ hiển thị PID và PPID
+Lệnh:
+ps -p [PID_cua_con] -o ppid,pid,comm
+Trong đó:
+-p [PID_cua_con]: Lọc chính xác theo PID của tiến trình con bạn cần tìm.
+-o ppid,pid,comm: Định dạng đầu ra chỉ hiển thị cột PPID (Mã tiến trình cha), PID (Mã tiến trình con) và COMM (Tên lệnh/tiến trình).
+c)
+Để sử dụng lệnh pstree tìm tiến trình cha của một tiến trình dựa vào PID của nó, bạn cần dùng tùy chọn -s (hoặc --show-parents).
+Lệnh:
+pstree -s [PID_cua_con]
+bài 2,bài3, bài4 
+
+Vì 
+Khi gọi fork(), hệ điều hành tạo ra tiến trình con có vùng bộ nhớ độc lập hoàn toàn với tiến trình cha.
+-Câu lệnh num_coconuts = 42; chỉ thay đổi giá trị trên vùng nhớ của tiến trình con.
+-Vùng nhớ của tiến trình cha không hề bị ảnh hưởng, nên biến num_coconuts của cha vẫn giữ nguyên giá trị ban đầu là 17.
+Bản chất: Tiến trình cha và con không dùng chung bộ nhớ, con sửa biến của con thì cha không bị thay đổi.
+bài 2,bài3, bài4 
+Vì 
+Khi gọi fork(), hệ điều hành tạo ra tiến trình con có vùng bộ nhớ độc lập hoàn toàn với tiến trình cha.
+-Câu lệnh num_coconuts = 42; chỉ thay đổi giá trị trên vùng nhớ của tiến trình con.
+-Vùng nhớ của tiến trình cha không hề bị ảnh hưởng, nên biến num_coconuts của cha vẫn giữ nguyên giá trị ban đầu là 17.
+Bản chất: Tiến trình cha và con không dùng chung bộ nhớ, con sửa biến của con thì cha không bị thay đổi.
